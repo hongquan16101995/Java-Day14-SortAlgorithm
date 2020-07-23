@@ -1,7 +1,7 @@
 package BigAssignmentOfSort;
 
 public class Sort {
-    public static void Choice(int arr[]){
+    public static void Choice(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             int min = arr[i];
             int indexmin = i;
@@ -27,7 +27,7 @@ public class Sort {
         }
     }
 
-    public static void Insert(int arr[]){
+    public static void Insert(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             int X = arr[i];
             int j;
@@ -47,14 +47,23 @@ public class Sort {
         }
     }
 
-    public static void Bubble(int arr[]){
+    public static void Bubble(int arr[]) {
+        boolean check;
         for (int i = 0; i < arr.length; i++) {
+            check = false;
             for (int j = arr.length - 1; j > i; j--) {
                 if (arr[j] < arr[j - 1]) {
                     int X;
                     X = arr[j];
                     arr[j] = arr[j - 1];
                     arr[j - 1] = X;
+                    check = true;
+                }
+            }
+            if (!check) {
+                System.out.println("Array after finished: ");
+                for (int h = 0; h < arr.length; h++) {
+                    System.out.print(arr[h] + "\t");
                 }
             }
             System.out.println("Array after sort " + i);
